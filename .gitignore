@@ -1,0 +1,35 @@
+# Git will process these rules from top to bottom.
+# A more reliable strategy is to ignore EVERYTHING, and then specifically
+# un-ignore only the script files we want.
+
+# Ignore all files and folders
+*
+
+# Do not ignore the 'Assets' directory, so we can check its contents
+!Assets/
+
+# Do not ignore the 'ProjectSettings' directory (highly recommended)
+!ProjectSettings/
+
+# But, ignore everything *inside* the Assets folder...
+Assets/*
+
+# ...EXCEPT for the following file extensions, anywhere within Assets.
+# The `**` matches any number of sub-directories.
+!Assets/**/*.cs
+!Assets/**/*.cs.meta
+!Assets/**/*.js
+!Assets/**/*.js.meta
+!Assets/**/*.boo
+!Assets/**/*.boo.meta
+
+# Also include shaders and their meta files, as they are a form of script
+!Assets/**/*.shader
+!Assets/**/*.shader.meta
+!Assets/**/*.shadergraph
+!Assets/**/*.shadergraph.meta
+!Assets/**/*.cginc
+!Assets/**/*.cginc.meta
+
+# Don't ignore the gitignore itself
+!.gitignore
